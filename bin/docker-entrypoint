@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# If running the rails server, wait for MySQL and create/migrate the database
+# first so `docker-compose up` works with a single command on a fresh volume.
+if [ "$1" == "bin/rails" ] && [ "$2" == "server" ]; then
+  until mysqladmin ping -h "${DB_HOST:-db}" -u "${DB_USERNAME:-root}" --password="${DB_PASSWORD:-}" --skip-ssl --silent; do
+    echo "Waiting for MySQL at ${DB_HOST:-db}..."
+    sleep 2
+  done
+
+  ./bin/rails db:prepare
+fi
+
+exec "${@}"
