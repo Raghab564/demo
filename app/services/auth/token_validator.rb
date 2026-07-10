@@ -47,11 +47,11 @@ module Auth
     end
 
     def issuer
-      ENV.fetch("OIDC_ISSUER", "https://mock-idp.vitalconnect.local/")
+      ENV.fetch("OIDC_ISSUER", "https://mock-idp.demo.local/")
     end
 
     def audience
-      ENV.fetch("OIDC_AUDIENCE", "vital-connect-api")
+      ENV.fetch("OIDC_AUDIENCE", "demo-api")
     end
   end
 end

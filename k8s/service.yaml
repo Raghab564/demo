@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: vital-connect-api
+  name: demo-api
   labels:
-    app: vital-connect-api
+    app: demo-api
 spec:
   type: ClusterIP
   selector:
-    app: vital-connect-api
+    app: demo-api
   ports:
     - name: http
       port: 80

@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: vital-connect-config
+  name: demo-config
 data:
   RAILS_ENV: "production"
   RAILS_LOG_TO_STDOUT: "true"
   # In AWS this would be an RDS Aurora MySQL endpoint and an MSK bootstrap
   # broker list, not in-cluster services.
-  DB_HOST: "vital-connect-mysql"
-  DB_USERNAME: "vital_connect"
-  DB_DATABASE: "vital_connect_production"
-  KAFKA_BROKERS: "vital-connect-kafka:9092"
+  DB_HOST: "demo-mysql"
+  DB_USERNAME: "demo"
+  DB_DATABASE: "demo_production"
+  KAFKA_BROKERS: "demo-kafka:9092"
   KAFKA_TELEMETRY_TOPIC: "telemetry.readings"
-  OIDC_ISSUER: "https://mock-idp.vitalconnect.local/"
-  OIDC_AUDIENCE: "vital-connect-api"
+  OIDC_ISSUER: "https://mock-idp.demo.local/"
+  OIDC_AUDIENCE: "demo-api"

@@ -1,4 +1,4 @@
-# Vital Connect — Telemetry Ingestion Service
+# Demo — Telemetry Ingestion Service
 
 A small Ruby on Rails (API-only) microservice that ingests vital-sign
 readings (heart rate + temperature) from simulated wearable sensors,

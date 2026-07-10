@@ -11,14 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: vital_connect_development
+  database: demo_development
 
 test:
   <<: *default
-  database: vital_connect_test
+  database: demo_test
 
 production:
   <<: *default
-  database: <%= ENV.fetch("DB_DATABASE") { "vital_connect_production" } %>
-  username: <%= ENV.fetch("DB_USERNAME") { "vital_connect" } %>
+  database: <%= ENV.fetch("DB_DATABASE") { "demo_production" } %>
+  username: <%= ENV.fetch("DB_USERNAME") { "demo" } %>
   password: <%= ENV.fetch("DB_PASSWORD") %>

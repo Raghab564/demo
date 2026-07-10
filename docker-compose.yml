@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: vital_connect_development
+      MYSQL_DATABASE: demo_development
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -51,8 +51,8 @@ services:
       DB_PASSWORD: ""
       KAFKA_BROKERS: kafka:9092
       KAFKA_TELEMETRY_TOPIC: telemetry.readings
-      OIDC_ISSUER: https://mock-idp.vitalconnect.local/
-      OIDC_AUDIENCE: vital-connect-api
+      OIDC_ISSUER: https://mock-idp.demo.local/
+      OIDC_AUDIENCE: demo-api
       OIDC_SHARED_SECRET: local-dev-shared-secret
     depends_on:
       db:

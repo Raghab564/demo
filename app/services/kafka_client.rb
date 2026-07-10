@@ -13,7 +13,7 @@ class KafkaClient
     def client
       @client ||= Kafka.new(
         seed_brokers: brokers,
-        client_id: ENV.fetch("KAFKA_CLIENT_ID", "vital-connect-api"),
+        client_id: ENV.fetch("KAFKA_CLIENT_ID", "demo-api"),
         connect_timeout: 5,
         socket_timeout: 5,
         logger: Rails.logger

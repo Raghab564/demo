@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vital-connect-api
+  name: demo-api
   labels:
-    app: vital-connect-api
+    app: demo-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: vital-connect-api
+      app: demo-api
   template:
     metadata:
       labels:
-        app: vital-connect-api
+        app: demo-api
     spec:
       containers:
-        - name: vital-connect-api
-          image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/vital-connect-api:latest
+        - name: demo-api
+          image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/demo-api:latest
           ports:
             - containerPort: 3000
           envFrom:
             - configMapRef:
-                name: vital-connect-config
+                name: demo-config
             - secretRef:
-                name: vital-connect-secrets
+                name: demo-secrets
           readinessProbe:
             httpGet:
               path: /up
@@ -47,12 +47,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: vital-connect-api
+  name: demo-api
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: vital-connect-api
+    name: demo-api
   minReplicas: 3
   maxReplicas: 20
   metrics:

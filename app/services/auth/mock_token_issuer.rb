@@ -10,8 +10,8 @@ module Auth
     def call(sensor_id:, ttl: 3600)
       now = Time.now.to_i
       payload = {
-        iss: ENV.fetch("OIDC_ISSUER", "https://mock-idp.vitalconnect.local/"),
-        aud: ENV.fetch("OIDC_AUDIENCE", "vital-connect-api"),
+        iss: ENV.fetch("OIDC_ISSUER", "https://mock-idp.demo.local/"),
+        aud: ENV.fetch("OIDC_AUDIENCE", "demo-api"),
         sub: sensor_id,
         iat: now,
         exp: now + ttl

@@ -19,8 +19,8 @@ RSpec.describe Auth::TokenValidator do
   end
 
   let(:configured_secret) { ENV.fetch("OIDC_SHARED_SECRET", "development-only-insecure-secret") }
-  let(:configured_issuer) { ENV.fetch("OIDC_ISSUER", "https://mock-idp.vitalconnect.local/") }
-  let(:configured_audience) { ENV.fetch("OIDC_AUDIENCE", "vital-connect-api") }
+  let(:configured_issuer) { ENV.fetch("OIDC_ISSUER", "https://mock-idp.demo.local/") }
+  let(:configured_audience) { ENV.fetch("OIDC_AUDIENCE", "demo-api") }
 
   it "rejects a token signed with the wrong secret" do
     bad_token = JWT.encode(
