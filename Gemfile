@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.0.1"
+gem "rails", "~> 8.1.4"
 
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
